@@ -69,16 +69,15 @@
     </ion-page>
 </template>
 
-<secript setup>
-import { useRouter } form "vue-router";
-import { IonPage, IonHeader, IonToolbar, IonTitle, IonContent, IonFabButton, IonList, IonItemSliding, IonFab, IonItemOption, IonItem, IonListHeader, IonLabel, IonItemOptions, IonInput, IonSelect, IonTextarea, IonRadio, IonRadioGroup, IonSelectOption } form "@ionic/vue";
-import { arrowBackOutline } form "ionicons/icons";
+<script setup>
+import { useRouter } from "vue-router";
+// import { IonPage, IonHeader, IonToolbar, IonTitle, IonContent, IonFabButton, IonList, IonItemSliding, IonFab, IonItemOption, IonItem, IonListHeader, IonLabel, IonItemOptions, IonInput, IonSelect, IonTextarea, IonRadio, IonRadioGroup, IonSelectOption } form "@ionic/vue";
+import { arrowBackOutline } from "ionicons/icons";
 
 const route = useRouter()
 
 const back = () => {
     route.back()
 }
-</secript>
-
+</script>
 <style></style>

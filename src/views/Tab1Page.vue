@@ -66,11 +66,11 @@
 </template>
 
 <script setup lang="ts">
-import { useRouter } form "vue-router";
-import { IonPage, IonHeader, IonToolbar, IonTitle, IonContent, IonFabButton, IonList, IonItemSliding, IonFab, IonItemOption, IonItem, IonListHeader, IonLabel, IonItemOptions, IonInput, IonSelect, IonTextarea, IonRadio, IonRadioGroup, IonSelectOption } form "@ionic/vue";
-import { add, heart, trash } form "ionicons/icons";
+import { useRouter } from "vue-router";
+// import { IonPage, IonHeader, IonToolbar, IonTitle, IonContent, IonFabButton, IonList, IonItemSliding, IonFab, IonItemOption, IonItem, IonListHeader, IonLabel, IonItemOptions, IonInput, IonSelect, IonTextarea, IonRadio, IonRadioGroup, IonSelectOption } form "@ionic/vue";
+import { add, heart, trash } from "ionicons/icons";
 
-const route = useRouter()
+const router = useRouter()
 
 const tambah = () => {
   router.push('/add')

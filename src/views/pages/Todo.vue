@@ -62,7 +62,7 @@
 </template>
 
 <script setup>
-<import { logoIonic, add } form 'ionicons/icons';
+import { logoIonic, add } from 'ionicons/icons';
 </script>
 
 <style>
