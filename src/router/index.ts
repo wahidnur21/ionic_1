@@ -14,7 +14,14 @@ const routes: Array<RouteRecordRaw> = [
       { path: 'tab2', component: () => import('@/views/Tab2Page.vue') },
       { path: 'tab3', component: () => import('@/views/Tab3Page.vue') }
     ]
-  }
+  },
+
+  { path: 'vue/state', component: () => import('@/views/vue-basic-feature/State.vue') },
+  { path: 'vue/event', component: () => import('@/views/vue-basic-feature/Event.vue') },
+  { path: 'vue/if', component: () => import('@/views/vue-basic-feature/IF.vue') },
+  { path: 'vue/iterator', component: () => import('@/views/vue-basic-feature/Iterator.vue') },
+  { path: 'vue/modal', component: () => import('@/views/vue-basic-feature/Model.vue') },
+  { path: 'vue/lifecycle', component: () => import('@/views/vue-basic-feature/Lifecycle.vue') },
 ]
 
 const router = createRouter({

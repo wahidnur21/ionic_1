@@ -17,32 +17,12 @@
           <ion-label>Daftar Kontak</ion-label>
         </ion-list-header>
 
-        <ion-item-sliding>
+        <ion-item-sliding v-for="i in data">
           <ion-item>
             <ion-label>
-              <h2>Nama Kontak</h2>
-              <p>Nomor</p>
-              <p>Email</p>
-            </ion-label>
-          </ion-item>
-
-          <ion-item-options>
-              <ion-item-option>
-                <ion-icon slot="start" :icon="heart"></ion-icon>
-                UNFAV
-              </ion-item-option>
-              <ion-item-option color="danger">
-                <ion-icon slot="start" :icon="trash"></ion-icon>
-              </ion-item-option>
-          </ion-item-options>
-        </ion-item-sliding>
-
-         <ion-item-sliding>
-          <ion-item>
-            <ion-label>
-              <h2>Nama Kontak</h2>
-              <p>Nomor</p>
-              <p>Email</p>
+              <h2>{{ i.name }}</h2>
+              <p>{{ i.phone }}</p>
+              <p>{{ i.email }}</p>
             </ion-label>
           </ion-item>
 
@@ -63,6 +43,6 @@
 </template>
 
 <script setup lang="ts">
-// import { IonPage, IonHeader, IonToolbar, IonTitle, IonContent, IonFabButton, IonList, IonItemSliding, IonFab, IonItemOption, IonItem, IonListHeader, IonLabel, IonItemOptions, IonInput, IonSelect, IonTextarea, IonRadio, IonRadioGroup, IonSelectOption } form "@ionic/vue";
+import { data } form "../services/contacts";
 import { heart, trash } from "ionicons/icons";
 </script>

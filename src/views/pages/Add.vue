@@ -23,61 +23,84 @@
                 <ion-list>
 
                     <ion-item>
-                        <ion-input label="Nama" label-placement="floating" placeholder="Masukkan Nama"></ion-input>
+                        <ion-input label="Nama" v-model="name" label-placement="floating" fill="solid" placeholder="Masukkan Nama"></ion-input>
                     </ion-item>
 
                     <ion-item>
-                        <ion-input label="Email" label-placement="floating" placeholder="Masukkan Email"></ion-input>
+                        <ion-input label="Email" v-model="email" label-placement="floating" fill="solid" placeholder="Masukkan Email"></ion-input>
                     </ion-item>
 
                     <ion-item>
-                        <ion-input label="Telp" label-placement="floating" placeholder="Masukkan no.telephone"></ion-input>
+                        <ion-input label="Telephone" v-model="phone" label-placement="floating" fill="solid" placeholder="Masukkan no.telephone"></ion-input>
                     </ion-item>
-
-                    <ion-list>
-                        <ion-list-header>Jenis Kelamin</ion-list-header>
 
                         <ion-radio-group>
-                            <ion-item>
-                                <ion-radio value="1" justify="end">Laki-Laki</ion-radio>
+                            <ion-item fill="solid" v-model="gender">
+                                <ion-radio value="1" justify="start" label-placement="end">Laki-Laki</ion-radio>
+                            </ion-item>
+    
+                            <ion-item fill="solid">
+                                <ion-radio value="2" justify="start" label-placement="end">Perempuan</ion-radio>
                             </ion-item>
                         </ion-radio-group>
+           
 
-                        <ion-radio-group>
-                            <ion-item>
-                                <ion-radio value="2" justify="end">Perempuan</ion-radio>
-                            </ion-item>
-                        </ion-radio-group>
-                    </ion-list>
-                    
-                    <ion-item>
-                        <ion-select label="Tipe" placeholder="Tipe Kontak">
-                            <ion-select-option value="0">Biasa</ion-select-option>
-                            <ion-select-option value="1">Favorit</ion-select-option>
+                        <ion-select label="Tipe" v-model="isFav" placeholder="Tipe Kontak" fill="solid">
+                            <ion-select-option value="false">Biasa</ion-select-option>
+                            <ion-select-option value="true">Favorit</ion-select-option>
                         </ion-select>
-                    </ion-item>
 
-                     <ion-item>
-                        <ion-textarea label="Alamat" label-placement="floating" placeholder="Masukkan Alamat"></ion-textarea>
-                     </ion-item>
-
+                        <ion-textarea label="Alamat" v-model="address" label-placement="floating" fill="solid" placeholder="Masukkan Alamat"></ion-textarea>
                 </ion-list>
 
               </ion-card-content>
             </ion-card>
         </ion-content>
+
+        <ion-footer>
+            <ion-button @click="simpan" expand="block">
+                <ion-icon slot="start" :icon="save"></ion-icon>
+                Simpan
+            </ion-button>    
+        </ion-footer>
     </ion-page>
 </template>
 
 <script setup>
+import {  ref} form "vue";
+import { data } form "../services/contacts";
 import { useRouter } from "vue-router";
-// import { IonPage, IonHeader, IonToolbar, IonTitle, IonContent, IonFabButton, IonList, IonItemSliding, IonFab, IonItemOption, IonItem, IonListHeader, IonLabel, IonItemOptions, IonInput, IonSelect, IonTextarea, IonRadio, IonRadioGroup, IonSelectOption } form "@ionic/vue";
 import { arrowBackOutline } from "ionicons/icons";
+
+const name = ref('')
+const email = ref('')
+const address = ref('')
+const phone = ref('')
+const gender = ref(1)
+const isFav = ref(false)
 
 const route = useRouter()
 
 const back = () => {
     route.back()
 }
+
+const simpan = () => {
+    const contact = {
+        name: name.value,
+        email: email.value,
+        address: address.value,
+        phone: phone.value,
+        gender: gender.value,
+        isFav: isFav.value,
+    }
+
+    console.log(contact)
+
+    data.value.push(contact)
+
+    router.back()
+}
 </script>
+
 <style></style>
