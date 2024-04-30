@@ -13,6 +13,11 @@
           <ion-label>Favorite</ion-label>
         </ion-tab-button>
 
+        <ion-tab-button tab="tab3" href="/tabs/tab3">
+          <ion-icon aria-hidden="true" :icon="settings" />
+          <ion-label>Favorite</ion-label>
+        </ion-tab-button>
+
       </ion-tab-bar>
     </ion-tabs>
   </ion-page>
@@ -20,5 +25,5 @@
 
 <script setup lang="ts">
 // import { IonPage, IonHeader, IonToolbar, IonTitle, IonContent, IonFabButton, IonList, IonItemSliding, IonFab, IonItemOption, IonItem, IonListHeader, IonLabel, IonItemOptions, IonInput, IonSelect, IonTextarea, IonRadio, IonRadioGroup, IonSelectOption } form "@ionic/vue";
-import { homeOutline, heart } from "ionicons/icons";
+import { homeOutline, heart, settings } from "ionicons/icons";
 </script>

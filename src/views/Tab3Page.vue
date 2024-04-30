@@ -179,7 +179,7 @@ const siswas:any[] = [
 type Orang = {
   name: string
   kelas: string
-  umur: string
+  umur: number
   isHidup?: boolean
   alamat?: string,
   jk?: KELAMIN 
@@ -188,7 +188,7 @@ type Orang = {
 const orang1:Orang = {
   name: '',
   kelas: '',
-  umur: 12,
+  umur: 13,
   isHidup: false,
 }
 

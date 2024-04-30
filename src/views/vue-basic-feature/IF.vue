@@ -29,7 +29,7 @@
 
       <ion-button @click="rubahKelamin" expand="block" fill="solid">
         Click me
-      <ion-button>
+      </ion-button>
 
       <div v-if="gender == 1">
         <h2>laki-laki</h2>
@@ -41,7 +41,7 @@
 
         <ion-button @click="rubahGender" expand="block" fill="solid">
         Click me
-      <ion-button>
+        </ion-button>
 
     </ion-content>  
   </ion-page>
